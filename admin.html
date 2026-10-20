@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Control Center — Spectra GrowthDesk</title>
+  <meta name="description" content="Spectra GrowthDesk Admin Control Center for client, content, publishing, billing, AI, and platform management.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-admin">
+  <div class="app">
+    <aside class="sidebar">
+      <a class="logo" href="index.html">SPECTRA <span>ADMIN</span></a>
+      <a class="side-link active" href="#command">Command Center</a>
+      <a class="side-link" href="#clients">Clients</a>
+      <a class="side-link" href="#content">Content Queue</a>
+      <a class="side-link" href="#ai">AI Settings</a>
+      <a class="side-link" href="#publishing">Publishing</a>
+      <a class="side-link" href="#billing">Billing</a>
+      <a class="side-link" href="#team">Team & Roles</a>
+      <a class="side-link" href="#logs">Audit Logs</a>
+      <a class="side-link" href="login.html" onclick="logout()">Sign out</a>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Command Center</h1>
+          <p class="muted">Full operational control across every client workspace</p>
+        </div>
+        <button class="btn btn-primary" onclick="createClient()">+ New client</button>
+      </div>
+
+      <section id="command" class="grid g4" style="margin-bottom:24px">
+        <div class="panel"><p class="muted">Active clients</p><div class="stat">28</div><span class="badge green">+4 this month</span></div>
+        <div class="panel"><p class="muted">MRR</p><div class="stat">$14,860</div><span class="badge green">+18%</span></div>
+        <div class="panel"><p class="muted">Pending approvals</p><div class="stat">37</div><span class="badge amber">9 overdue</span></div>
+        <div class="panel"><p class="muted">Publishing errors</p><div class="stat">2</div><span class="badge rose">Action needed</span></div>
+      </section>
+
+      <section id="clients" class="panel" style="margin-bottom:24px">
+        <h2>Clients</h2>
+        <p class="muted">Open any workspace with full admin access.</p>
+        <table class="table" style="margin-top:16px">
+          <tr><th>Client</th><th>Plan</th><th>Status</th><th>Posts left</th><th>Approvals</th><th>Action</th></tr>
+          <tr><td>Skyline Realty</td><td>Growth</td><td><span class="badge green">Active</span></td><td>6</td><td><span class="badge amber">3 pending</span></td><td><button class="btn btn-ghost" onclick="viewAsClient()">View as client</button></td></tr>
+          <tr><td>Lumina Medspa</td><td>Momentum</td><td><span class="badge green">Active</span></td><td>12</td><td><span class="badge green">0 pending</span></td><td><button class="btn btn-ghost" onclick="viewAsClient()">View as client</button></td></tr>
+          <tr><td>Nova Fitness</td><td>Starter</td><td><span class="badge amber">Trial</span></td><td>8</td><td><span class="badge rose">1 overdue</span></td><td><button class="btn btn-ghost" onclick="viewAsClient()">View as client</button></td></tr>
+        </table>
+      </section>
+
+      <section id="content" class="panel" style="margin-botto
