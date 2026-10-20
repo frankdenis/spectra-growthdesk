@@ -3,30 +3,114 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sign in — Spectra GrowthDesk</title>
-  <meta name="description" content="Sign in to the Spectra GrowthDesk client portal or admin control center.">
+  <title>Client Portal — Spectra GrowthDesk</title>
+  <meta name="description" content="Spectra GrowthDesk client portal for approvals, scheduling, analytics, and brand management.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section class="hero" style="min-height:100vh;display:flex;align-items:center">
-    <div class="container" style="max-width:460px">
-      <div class="panel">
-        <h2 style="margin-bottom:8px">Welcome back</h2>
-        <p class="muted" style="margin-bottom:22px">Sign in to your Spectra GrowthDesk workspace.</p>
-        <form onsubmit="return login(event)">
-          <label class="muted" style="font-size:13px">Email</label>
-          <input class="panel" id="email" type="email" required style="width:100%;margin:6px 0 16px" placeholder="you@company.com">
-          <label class="muted" style="font-size:13px">Password</label>
-          <input class="panel" id="password" type="password" required style="width:100%;margin:6px 0 22px" placeholder="Enter password">
-          <button class="btn btn-primary" style="width:100%">Sign in</button>
-        </form>
-        <p class="muted" style="margin-top:16px;font-size:13px">
-          Demo client: client@example.com / client123<br>
-          Demo admin: admin@spectragrowthdesk.com / admin123
-        </p>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="logo" href="index.html">SPECTRA <span>GROWTHDESK</span></a>
+      <a class="side-link active" href="#overview">Growth Overview</a>
+      <a class="side-link" href="#calendar">Content Radar</a>
+      <a class="side-link" href="#approvals">Approval Studio</a>
+      <a class="side-link" href="#ai">Spectra AI Studio</a>
+      <a class="side-link" href="#analytics">Growth Intelligence</a>
+      <a class="side-link" href="#brand">Brand Core</a>
+      <a class="side-link" href="login.html" onclick="logout()">Sign out</a>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Good evening, Sarah</h1>
+          <p class="muted">Growth Package · 3 posts awaiting approval</p>
+        </div>
+        <button class="btn btn-primary" onclick="approveAll()">Approve all</button>
       </div>
-    </div>
-  </section>
+
+      <section id="overview" class="grid g4" style="margin-bottom:24px">
+        <div class="panel"><p class="muted">Followers</p><div class="stat">12,480</div><span class="badge green">+1,240 this month</span></div>
+        <div class="panel"><p class="muted">Reach</p><div class="stat">86.4K</div><span class="badge green">+32%</span></div>
+        <div class="panel"><p class="muted">Engagement rate</p><div class="stat">4.8%</div><span class="badge green">+0.7%</span></div>
+        <div class="panel"><p class="muted">Posts published</p><div class="stat">14<span style="font-size:16px;color:#64748B">/20</span></div><span class="badge amber">3 pending</span></div>
+      </section>
+
+      <section id="calendar" class="panel" style="margin-bottom:24px">
+        <h2>Content Radar</h2>
+        <p class="muted" style="margin-bottom:18px">October content calendar</p>
+        <div class="calendar">
+          <div class="day"><strong>Mon 3</strong><div class="post p-ig">Instagram · 6 PM</div></div>
+          <div class="day"><strong>Tue 4</strong><div class="post p-li">LinkedIn · 9 AM</div></div>
+          <div class="day"><strong>Wed 5</strong><div class="post p-ig">Reel · 7 PM</div></div>
+          <div class="day"><strong>Thu 6</strong><div class="post p-tt">TikTok · 8 PM</div></div>
+          <div class="day"><strong>Fri 7</strong><div class="post p-ig">Carousel · 12 PM</div></div>
+          <div class="day"><strong>Sat 8</strong><div class="post p-li">LinkedIn · 10 AM</div></div>
+          <div class="day"><strong>Sun 9</strong><div class="post p-ig">Story set · 5 PM</div></div>
+        </div>
+      </section>
+
+      <section id="approvals" class="panel">
+        <h2>Approval Studio</h2>
+        <p class="muted">Review and approve your upcoming content.</p>
+
+        <div class="card" style="margin-top:18px">
+          <span class="badge amber">Needs approval</span>
+          <h3 style="margin-top:10px">October Offer</h3>
+          <p class="muted">“Your dream home is closer than you think. Book a free consultation today.”</p>
+          <p class="muted" style="margin-top:8px">Scheduled: Thursday, 6:00 PM</p>
+          <div class="approve">
+            <button class="btn btn-primary" onclick="approve(this)">Approve</button>
+            <button class="btn btn-ghost">Request changes</button>
+            <button class="btn btn-ghost">Edit caption</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <span class="badge amber">Needs approval</span>
+          <h3 style="margin-top:10px">Client Success Story</h3>
+          <p class="muted">“How we helped a first-time buyer secure their ideal home in 21 days.”</p>
+          <p class="muted" style="margin-top:8px">Scheduled: Friday, 9:00 AM</p>
+          <div class="approve">
+            <button class="btn btn-primary" onclick="approve(this)">Approve</button>
+            <button class="btn btn-ghost">Request changes</button>
+            <button class="btn btn-ghost">Edit caption</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai" class="panel" style="margin-top:24px">
+        <h2>Spectra AI Studio</h2>
+        <p class="muted">Request a new post and our AI will prepare an on-brand draft for approval.</p>
+        <div class="grid g2" style="margin-top:18px">
+          <input class="panel" id="topic" placeholder="What do you want to promote?">
+          <select class="panel">
+            <option>Instagram</option>
+            <option>LinkedIn</option>
+            <option>TikTok</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" style="margin-top:16px" onclick="generate()">Generate draft</button>
+        <div id="ai-result" class="card" style="margin-top:16px;display:none"></div>
+      </section>
+
+      <section id="analytics" class="panel" style="margin-top:24px">
+        <h2>Growth Intelligence</h2>
+        <p class="muted">Your top performing content this month.</p>
+        <table class="table" style="margin-top:14px">
+          <tr><th>Post</th><th>Reach</th><th>Engagement</th><th>Result</th></tr>
+          <tr><td>October Offer Reel</td><td>24.1K</td><td>6.2%</td><td><span class="badge green">18 DMs</span></td></tr>
+          <tr><td>Client Success Carousel</td><td>15.8K</td><td>5.4%</td><td><span class="badge green">9 clicks</span></td></tr>
+          <tr><td>Market Insight Post</td><td>11.2K</td><td>3.9%</td><td><span class="badge gray">Awareness</span></td></tr>
+        </table>
+      </section>
+
+      <section id="brand" class="panel" style="margin-top:24px">
+        <h2>Brand Core</h2>
+        <p class="muted">Brand voice: Professional, warm, trustworthy. Avoid: unrealistic promises, political topics.</p>
+      </section>
+    </main>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
