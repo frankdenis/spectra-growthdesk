@@ -49,4 +49,56 @@
         </table>
       </section>
 
-      <section id="content" class="panel" style="margin-botto
+      <section id="content" class="panel" style="margin-bottom:24px">
+        <h2>Content Queue</h2>
+        <p class="muted">All drafts, approvals, and scheduled posts across clients.</p>
+        <table class="table" style="margin-top:16px">
+          <tr><th>Client</th><th>Post</th><th>Platform</th><th>Status</th><th>Admin action</th></tr>
+          <tr><td>Skyline Realty</td><td>October Offer</td><td>Instagram</td><td><span class="badge amber">Needs approval</span></td><td><button class="btn btn-ghost" onclick="adminApprove(this)">Approve</button></td></tr>
+          <tr><td>Lumina Medspa</td><td>Skincare Myth</td><td>TikTok</td><td><span class="badge gray">Scheduled</span></td><td><button class="btn btn-ghost">Edit</button></td></tr>
+          <tr><td>Nova Fitness</td><td>Class Promo</td><td>Instagram</td><td><span class="badge rose">Changes requested</span></td><td><button class="btn btn-ghost">Revise</button></td></tr>
+        </table>
+      </section>
+
+      <section id="ai" class="panel" style="margin-bottom:24px">
+        <h2>AI Settings</h2>
+        <p class="muted">Configure models, limits, safety rules, and prompt templates.</p>
+        <div class="grid g3" style="margin-top:18px">
+          <div class="card"><h3>Caption model</h3><p class="muted">GPT-class writing model</p></div>
+          <div class="card"><h3>Image model</h3><p class="muted">Brand-safe visual generation</p></div>
+          <div class="card"><h3>Monthly limit</h3><p class="muted">Unlimited for Super Admin</p></div>
+        </div>
+      </section>
+
+      <section id="publishing" class="panel" style="margin-bottom:24px">
+        <h2>Publishing</h2>
+        <p class="muted">Next 24 hours: 18 posts scheduled across 12 client accounts.</p>
+      </section>
+
+      <section id="billing" class="panel" style="margin-bottom:24px">
+        <h2>Billing & Subscriptions</h2>
+        <table class="table" style="margin-top:14px">
+          <tr><th>Client</th><th>Plan</th><th>Next billing</th><th>Status</th></tr>
+          <tr><td>Skyline Realty</td><td>Growth · $299</td><td>Nov 1</td><td><span class="badge green">Paid</span></td></tr>
+          <tr><td>Lumina Medspa</td><td>Momentum · $599</td><td>Nov 3</td><td><span class="badge green">Paid</span></td></tr>
+        </table>
+      </section>
+
+      <section id="team" class="panel" style="margin-bottom:24px">
+        <h2>Team & Roles</h2>
+        <p class="muted">Super Admin has unrestricted access. Other roles use permission-based access.</p>
+      </section>
+
+      <section id="logs" class="panel">
+        <h2>Audit Logs</h2>
+        <table class="table" style="margin-top:14px">
+          <tr><th>Time</th><th>Admin</th><th>Action</th><th>Client</th></tr>
+          <tr><td>9:41 PM</td><td>Super Admin</td><td>Viewed client workspace</td><td>Skyline Realty</td></tr>
+          <tr><td>9:38 PM</td><td>Content Manager</td><td>Generated AI draft</td><td>Lumina Medspa</td></tr>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
