@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign in — Spectra GrowthDesk</title>
+  <meta name="description" content="Sign in to the Spectra GrowthDesk client portal or admin control center.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="hero" style="min-height:100vh;display:flex;align-items:center">
+    <div class="container" style="max-width:460px">
+      <div class="panel">
+        <h2 style="margin-bottom:8px">Welcome back</h2>
+        <p class="muted" style="margin-bottom:22px">Sign in to your Spectra GrowthDesk workspace.</p>
+        <form onsubmit="return login(event)">
+          <label class="muted" style="font-size:13px">Email</label>
+          <input class="panel" id="email" type="email" required style="width:100%;margin:6px 0 16px" placeholder="you@company.com">
+          <label class="muted" style="font-size:13px">Password</label>
+          <input class="panel" id="password" type="password" required style="width:100%;margin:6px 0 22px" placeholder="Enter password">
+          <button class="btn btn-primary" style="width:100%">Sign in</button>
+        </form>
+        <p class="muted" style="margin-top:16px;font-size:13px">
+          Demo client: client@example.com / client123<br>
+          Demo admin: admin@spectragrowthdesk.com / admin123
+        </p>
+      </div>
+    </div>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>
